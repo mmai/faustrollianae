@@ -1,0 +1,54 @@
+$bgcolor: #f1f1f1;
+$quoteboxwidth: 500px;
+
+body {
+  background-color: $bgcolor;
+}
+
+#maincontainer {
+}
+
+.centered {
+  max-width: $quoteboxwidth;
+  margin: auto;
+}
+
+.gidouille-start {
+  padding-top: 10px;
+  // text-align:center;
+  // right: 2px;
+  // right: $quoteboxwidth/2 - 20px;
+}
+
+.quotebox-start {
+  margin-top: 40px;
+  padding: 30px;
+  width: auto;
+  max-width: $quoteboxwidth;
+  text-align:center;
+}
+
+.gidouille {
+  position: absolute;
+  top: -25px;
+  // right: 2px;
+  right: $quoteboxwidth/2 - 28px;
+}
+
+.quotebox {
+  overflow:visible;
+  margin-top: 40px;
+  padding-top: 30px;
+  width: auto;
+  max-width: $quoteboxwidth;
+  white-space:pre-wrap;
+}
+
+.quotebox-quote {
+  font-size:1.3em;
+  text-align: justify;
+}
+
+.infos-text {
+
+}
