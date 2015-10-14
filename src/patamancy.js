@@ -50,7 +50,7 @@ function getQuote(size, text, position){
   const chunkStop = Math.min(text.length, chunkStart + maxTextChunk);
   const chunk = text.slice(chunkStart, chunkStop);
 
-  console.log(chunk);
+  // console.log(chunk);
 
   //Try to get complete sentences of the chunk of text 
   let sentences = tokenizer.sentences(chunk, true);
@@ -106,9 +106,13 @@ function getQuote(size, text, position){
     quoteSentences.unshift(sentence);
     quoteLength += sentence.length;
   }
+  // console.log(quoteSentences);
 
   const quoteStart = chunk.indexOf(quoteSentences[0]);
-  const lastSentence = quoteSentences[quoteSentences.length - 1]
+  let lastSentence = quoteSentences.pop();
+  while (lastSentence.length < 3) {
+    lastSentence = quoteSentences.pop();
+  }
   const quoteStop = removedFromStart + chunk.slice(removedFromStart).indexOf(lastSentence) + lastSentence.length;
 
   return cleanText(chunk.slice(quoteStart, quoteStop));
@@ -119,4 +123,4 @@ function cleanText(text){
   return text.trim();
 }
 
-// console.log(randomQuote({position:24430}));
+// console.log(randomQuote({position:74319}));
