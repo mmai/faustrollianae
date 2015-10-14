@@ -19,16 +19,19 @@ let routes = [
 let viewHome = () => {
   return  (
     <div className="quotebox-start mdl-card mdl-shadow--2dp">
-      <div class="mdl-card__title">
-            Interrogez les mots du clinamen
-      </div>
-      <div className="mdl-card__supporting-text mdl-">
-            <em>La Pataphysique est la science</em><br/>
+      <h3 class="mdl-card__title">
+            Sortes Faustrollianae
+      </h3>
+      <div className="mdl-card__supporting-text">
+          Interrogez le clinamen
       </div>
       <div className="gidouille-start mdl-card__actions">
         <button className="mdl-button mdl-js-button mdl-button--fab">
           <i className="icon material-icons">help</i>
         </button>
+      </div>
+      <div className="mdl-card__supporting-text">
+          Tout est dans <em>Faustroll</em> - Boris vian
       </div>
     </div>
   )
@@ -37,23 +40,26 @@ let viewHome = () => {
 let modelQuote = (quoteId) => randomQuote({position:quoteId});
 let viewQuote = (quote) => {
   return (
+      <div>
+      <input className="mdl-slider mdl-js-slider" type="range" min="0" max="100000" value={quote.position} tabindex="0"/>
     <div className="quotebox mdl-card mdl-shadow--2dp">
       <div className="mdl-card__supporting-text">
           <p className="quotebox-quote">{quote.quote}</p>
       </div>
-      <div className="gidouille">
-        <button className="mdl-button mdl-js-button mdl-button--fab">
+      <div className="mdl-card__menu">
+        <button className="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
           <i className="icon material-icons">refresh</i>
         </button>
       </div>
       <div className="mdl-card__supporting-text">
         <div className="infos-text">
           Alfred Jarry<br/>
-          <i>{quote.chapter.join('\n')}</i>
-          <br/>Emplacement {quote.position}
+          <i>{quote.chapter.join('\n')}</i><br/>
+          Emplacement {quote.position/1000}%
         </div>
       </div>
     </div>
+      </div>
       )
 };
 
@@ -68,17 +74,24 @@ function render(output){
 }
 
 function intent(DOM) {
-  return DOM.select('button').events('click');
+  return {
+    reloadClick$: DOM.select('button').events('click'),
+    sliderSelect$: DOM.select('input').events('change')
+  };
 }
 
-function model(actions){
-  return actions.map( ev => randomQuoteId()).startWith(0);
+function model({reloadClick$, sliderSelect$}){
+  return Rx.Observable.merge(
+    reloadClick$.map(  ev => randomQuoteId()),
+    sliderSelect$.map( ev => ev.target.value)     
+    // sliderSelect$.map( ev => randomQuote(ev.target.value))     
+  ).startWith(0);
 }
 
 function view(state$, output){
   return state$.map((state) => {
       if (state > 0) {
-        window.location.hash = `#/loc/${state}`;
+        window.location.hash = `#/loc/${state}`;//XXX This is a side effect. Should be sent to Router ?
       }
       return render(output);
     });

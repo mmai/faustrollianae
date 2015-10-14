@@ -47,7 +47,7 @@ function quoteAt(size, book, position){
 function getQuote(size, text, position){
   //Take a chunk of text around the position
   const chunkStart = Math.max(0, position - (maxTextChunk / 2));
-  const chunkStop = Math.min(text.length, position + (maxTextChunk / 2));
+  const chunkStop = Math.min(text.length, chunkStart + maxTextChunk);
   const chunk = text.slice(chunkStart, chunkStop);
 
   //Try to get complete sentences of the chunk of text 
@@ -79,7 +79,16 @@ function getQuote(size, text, position){
   const lastSentence = sentences[numSentence - 1]
   const quoteStop = removedFromStart + chunk.slice(removedFromStart).indexOf(lastSentence) + lastSentence.length;
 
-  return chunk.slice(quoteStart, quoteStop);
+  // console.log(sentences);
+  // console.log(quoteStart);
+  // console.log(quoteStop);
+
+  return cleanText(chunk.slice(quoteStart, quoteStop));
 }
 
-// console.log(randomQuote({position:1415}));
+function cleanText(text){
+  text = text.replace(/^»/, '');
+  return text.trim();
+}
+
+// console.log(randomQuote({position:56863}));

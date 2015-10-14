@@ -1,5 +1,5 @@
 $bgcolor: #f1f1f1;
-$quoteboxwidth: 500px;
+$quoteboxwidth: 30em;
 
 body {
   background-color: $bgcolor;
@@ -14,15 +14,15 @@ body {
 }
 
 .gidouille-start {
-  padding-top: 10px;
+  padding-top: 0.8em;
   // text-align:center;
   // right: 2px;
   // right: $quoteboxwidth/2 - 20px;
 }
 
 .quotebox-start {
-  margin-top: 40px;
-  padding: 30px;
+  margin-top: 2.5em;
+  padding: 2em;
   width: auto;
   max-width: $quoteboxwidth;
   text-align:center;
@@ -30,15 +30,15 @@ body {
 
 .gidouille {
   position: absolute;
-  top: -25px;
+  top: -2em;
   // right: 2px;
-  right: $quoteboxwidth/2 - 28px;
+  right: $quoteboxwidth/2 - 2em;
 }
 
 .quotebox {
   overflow:visible;
-  margin-top: 40px;
-  padding-top: 30px;
+  margin-top: 1.5em;
+  padding-top: 2em;
   width: auto;
   max-width: $quoteboxwidth;
   white-space:pre-wrap;
