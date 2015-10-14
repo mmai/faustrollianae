@@ -45,7 +45,7 @@ h3 {
 .quotebox {
   overflow:visible;
   margin-top: 1.5em;
-  margin-bottom: 1.5em;
+  margin-bottom: 3em;
   padding-top: 2em;
   width: auto;
   max-width: $quoteboxwidth;
@@ -55,10 +55,18 @@ h3 {
 .quotebox-quote {
   font-family: 'Lora', serif;
   font-size:1.2em;
-  // color: green;
+  color: rgba(0, 0, 0, 0.74);
   text-align: justify;
 }
 
-.infos-text {
-
+.faustroll-footer {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.54);
+  background-color: inherit;
+  ul {
+    justify-content: center;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
 }
