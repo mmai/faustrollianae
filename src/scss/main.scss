@@ -20,8 +20,15 @@ body {
   // right: $quoteboxwidth/2 - 20px;
 }
 
+h3 {
+  font-family: 'Lora', serif;
+  text-align: center;
+  color:rgba(0, 0, 0, 0.54);
+}
+
 .quotebox-start {
   margin-top: 2.5em;
+  margin-bottom: 2.5em;
   padding: 2em;
   width: auto;
   max-width: $quoteboxwidth;
@@ -38,6 +45,7 @@ body {
 .quotebox {
   overflow:visible;
   margin-top: 1.5em;
+  margin-bottom: 1.5em;
   padding-top: 2em;
   width: auto;
   max-width: $quoteboxwidth;
@@ -45,7 +53,9 @@ body {
 }
 
 .quotebox-quote {
-  font-size:1.3em;
+  font-family: 'Lora', serif;
+  font-size:1.2em;
+  // color: green;
   text-align: justify;
 }
 

@@ -106,6 +106,7 @@ function getQuote(size, text, position){
     quoteSentences.unshift(sentence);
     quoteLength += sentence.length;
   }
+
   // console.log(quoteSentences);
 
   const quoteStart = chunk.indexOf(quoteSentences[0]);
@@ -115,6 +116,8 @@ function getQuote(size, text, position){
   }
   const quoteStop = removedFromStart + chunk.slice(removedFromStart).indexOf(lastSentence) + lastSentence.length;
 
+  // console.log(quoteStart);
+  // console.log(quoteStop);
   return cleanText(chunk.slice(quoteStart, quoteStop));
 }
 
@@ -123,4 +126,4 @@ function cleanText(text){
   return text.trim();
 }
 
-// console.log(randomQuote({position:74319}));
+// console.log(randomQuote({position:98657}));

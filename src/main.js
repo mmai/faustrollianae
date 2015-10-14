@@ -22,16 +22,10 @@ let viewHome = () => {
       <h3 class="mdl-card__title">
             Sortes Faustrollianae
       </h3>
-      <div className="mdl-card__supporting-text">
-          Interrogez le clinamen
-      </div>
       <div className="gidouille-start mdl-card__actions">
         <button className="mdl-button mdl-js-button mdl-button--fab">
           <i className="icon material-icons">help</i>
         </button>
-      </div>
-      <div className="mdl-card__supporting-text">
-          Tout est dans <em>Faustroll</em> - Boris vian
       </div>
     </div>
   )
@@ -41,6 +35,9 @@ let modelQuote = (quoteId) => randomQuote({position:quoteId});
 let viewQuote = (quote) => {
   return (
       <div>
+      <h3 class="mdl-card__title">
+            Sortes Faustrollianae
+      </h3>
       <input className="mdl-slider mdl-js-slider" type="range" min="0" max="100000" value={quote.position} tabindex="0"/>
     <div className="quotebox mdl-card mdl-shadow--2dp">
       <div className="mdl-card__supporting-text">
