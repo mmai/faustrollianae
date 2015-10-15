@@ -3,6 +3,7 @@ dev:
 build:
 	webpack -p
 	cp index.html dist/
+	cp favicon.png dist/
 buildtest: build
 	cd dist && python -m SimpleHTTPServer
 publish:
