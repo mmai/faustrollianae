@@ -1,8 +1,8 @@
 /** @jsx hJSX */
 
 //Design imports
-require('exports?componentHandler!material-design-lite/material.js').upgradeDom();
-require("../node_modules/material-design-lite/material.min.css");
+// require('exports?componentHandler!material-design-lite/material.js').upgradeDom();
+// require("../node_modules/material-design-lite/material.min.css");
 require("./scss/main.scss")
 
 import {run, Rx} from '@cycle/core';
@@ -10,6 +10,11 @@ import {makeDOMDriver, hJSX, h} from '@cycle/dom';
 import {makeClientDriver} from 'cycle-director';
 
 import {randomQuoteId, randomQuote} from './patamancy'; 
+
+// force https
+if ((!location.port || location.port == "80") && location.protocol != 'https:') {
+  location.protocol = 'https:';
+}
 
 let routes = [
   { url: "/loc/:quoteId", on: (quoteId) => viewQuote(modelQuote(quoteId)), name: 'Quote' },
@@ -35,9 +40,7 @@ let modelQuote = (quoteId) => randomQuote({position:quoteId});
 let viewQuote = (quote) => {
   return (
       <div>
-      <h3 class="mdl-card__title">
-            Sortes Faustrollianae
-      </h3>
+      <h3>Sortes Faustrollianae</h3>
       <input className="mdl-slider mdl-js-slider" type="range" min="0" max="100000" value={quote.position} tabindex="0"/>
     <div className="quotebox mdl-card mdl-shadow--2dp">
       <div className="mdl-card__supporting-text">

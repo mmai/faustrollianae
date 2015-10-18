@@ -1,9 +1,12 @@
 dev:
 	webpack-dev-server -d --progress --colors
-build:
+clean:
+	rm -rf dist/*
+build: clean
 	webpack -p
 	cp index.html dist/
 	cp favicon.png dist/
+	cp -R img dist/
 buildtest: build
 	cd dist && python -m SimpleHTTPServer
 publish:
