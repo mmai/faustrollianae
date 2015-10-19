@@ -34,27 +34,31 @@ let viewHome = () => {
 let modelQuote = (quoteId) => randomQuote({position:quoteId});
 let viewQuote = (quote) => {
   return (
-      <div>
-      <h3>Sortes Faustrollianae</h3>
-      <input className="mdl-slider mdl-js-slider" type="range" min="0" max="100000" value={quote.position} tabindex="0"/>
-    <div className="quotebox mdl-card mdl-shadow--2dp">
-      <div className="mdl-card__supporting-text">
-          <p className="quotebox-quote">{quote.quote}</p>
-      </div>
-      <div className="mdl-card__menu">
-        <button className="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+    <div>
+      <h3>
+        <div>Sortes Faustrollianae</div>
+      </h3>
+
+      <div className="quotebox mdl-card mdl-shadow--2dp">
+      <div className="faustroll-container">
+        <button className="mdl-button mdl-button--fab mdl-js-button mdl-js-ripple-effect">
           <i className="icon material-icons">refresh</i>
         </button>
       </div>
-      <div className="mdl-card__supporting-text">
-        <div className="infos-text">
-          Alfred Jarry<br/>
-          <i>{quote.chapter.join('\n')}</i><br/>
-          Emplacement {quote.position/1000}%
+      <div className="mdl-card__supporting-text" id="faustroll-position">{quote.position/1000}% </div>
+        <div className="mdl-card__supporting-text">
+            <p className="quotebox-quote">{quote.quote}</p>
+        </div>
+        <div className="mdl-card__supporting-text">
+          <div className="infos-text">
+            Alfred Jarry<br/>
+            <i>{quote.chapter.join('\n')}</i>
+          </div>
         </div>
       </div>
+
+
     </div>
-      </div>
       )
 };
 

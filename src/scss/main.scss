@@ -22,8 +22,9 @@ body {
 
 h3 {
   font-family: 'Lora', serif;
-  text-align: center;
   color:rgba(0, 0, 0, 0.54);
+  width:100%;
+  text-align: center;
 }
 
 .quotebox-start {
@@ -44,9 +45,9 @@ h3 {
 
 .quotebox {
   overflow:visible;
-  margin-top: 1.5em;
-  margin-bottom: 3em;
-  padding-top: 2em;
+  margin-top: 2.5em;
+  margin-bottom: 1em;
+  padding-top: 1em;
   width: auto;
   max-width: $quoteboxwidth;
   white-space:pre-wrap;
@@ -57,6 +58,22 @@ h3 {
   font-size:1.2em;
   color: rgba(0, 0, 0, 0.74);
   text-align: justify;
+}
+
+#faustroll-position {
+  width:100%;
+  text-align:right;
+  margin-bottom: -0.5em;
+  margin-top: -0.5em;
+  color:rgba(0, 0, 0, 0.44);
+  padding:0;
+  
+}
+
+.faustroll-container {
+  text-align:center;
+  margin-top:-2.8em;
+  margin-bottom:-0.5em;
 }
 
 .faustroll-footer {
