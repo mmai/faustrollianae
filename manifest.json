@@ -15,6 +15,6 @@
         "sizes": "144x144",
         "type": "image/png"
       }],
-  "start_url": "/index.html",
+  "start_url": "index.html",
   "display": "fullscreen"
 }

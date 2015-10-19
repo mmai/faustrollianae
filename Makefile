@@ -5,6 +5,7 @@ clean:
 build: clean
 	webpack -p
 	cp index.html dist/
+	cp manifest.json dist/
 	cp favicon.png dist/
 	cp -R img dist/
 buildtest: build
