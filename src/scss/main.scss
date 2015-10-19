@@ -30,6 +30,8 @@ h3 {
 .quotebox-start {
   margin-top: 2.5em;
   margin-bottom: 2.5em;
+  margin-right: 0.3em;
+  margin-left: 0.3em;
   padding: 2em;
   width: auto;
   max-width: $quoteboxwidth;
@@ -47,6 +49,8 @@ h3 {
   overflow:visible;
   margin-top: 2.5em;
   margin-bottom: 1em;
+  margin-right: 0.3em;
+  margin-left: 0.3em;
   padding-top: 1em;
   width: auto;
   max-width: $quoteboxwidth;
@@ -85,5 +89,8 @@ h3 {
   }
   a:hover {
     text-decoration: underline;
+  }
+  ul {
+    flex-flow: row wrap;
   }
 }
