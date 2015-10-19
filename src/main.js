@@ -11,11 +11,6 @@ import {makeClientDriver} from 'cycle-director';
 
 import {randomQuoteId, randomQuote} from './patamancy'; 
 
-// force https
-if ((!location.port || location.port == "80") && location.protocol != 'https:') {
-  location.protocol = 'https:';
-}
-
 let routes = [
   { url: "/loc/:quoteId", on: (quoteId) => viewQuote(modelQuote(quoteId)), name: 'Quote' },
   { url: '/', on: () => viewHome(), name: 'Home' }
