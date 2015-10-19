@@ -5,14 +5,13 @@
   importScripts('./node_modules/sw-toolbox/sw-toolbox.js');
 
   // Turn on debug logging, visible in the Developer Tools' console.
-  global.toolbox.options.debug = true;
+  global.toolbox.options.debug = false;
 
   // Set up a handler for HTTP GET requests:
-  // - '/(.*)' means any URL pathname will be matched.
-  // - toolbox.cacheFirst let us to use the predefined cache strategy for those requests.
-  global.toolbox.router.get('faustrollianae/index.html', global.toolbox.networkFirst);
-  global.toolbox.router.get('faustrollianae/bundle.js', global.toolbox.networkFirst);
-  global.toolbox.router.get('faustrollianae/styles.css', global.toolbox.networkFirst);
+  // - toolbox.networkFirst for elements that can change
+  global.toolbox.router.get('index.html', global.toolbox.networkFirst);
+  global.toolbox.router.get('bundle.js', global.toolbox.networkFirst);
+  global.toolbox.router.get('styles.css', global.toolbox.networkFirst);
 
   // By default, all requests that don't match our custom handler will use the toolbox.cacheFirst
   // cache strategy, and their responses will be stored in the default cache.
