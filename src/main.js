@@ -20,7 +20,7 @@ let viewHome = () => {
   return  (
     <div className="quotebox-start mdl-card mdl-shadow--2dp">
       <h3 class="mdl-card__title">
-            Sortes Faustrollianae
+            Sortes faustrollianae
       </h3>
       <div className="gidouille-start mdl-card__actions">
         <button className="mdl-button mdl-js-button mdl-button--fab">
@@ -36,7 +36,7 @@ let viewQuote = (quote) => {
   return (
     <div>
       <h3>
-        <div>Sortes Faustrollianae</div>
+        <div>Sortes faustrollianae</div>
       </h3>
 
       <div className="quotebox mdl-card mdl-shadow--2dp">
